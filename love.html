@@ -33,9 +33,10 @@
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const milliseconds = distance % 1000;
 
             document.getElementById("countdown").innerHTML = 
-                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms";
 
             if (distance < 0) {
                 clearInterval(x);
@@ -43,8 +44,8 @@
             }
         }
 
+        const x = setInterval(countdown, 10);  // Update the countdown every 10 milliseconds
         countdown();
-        setInterval(countdown, 1000);
     </script>
 </body>
 </html>
