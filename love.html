@@ -25,19 +25,9 @@
 
     <script>
         function countdown() {
-            // Target date and time in Latvia/Riga time zone
-            const options = { timeZone: 'Europe/Riga', hour12: false };
-            const targetDateTime = new Intl.DateTimeFormat('en-US', {
-                ...options,
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-            }).format(new Date('2024-08-01T17:16:00'));
+            // Target date and time in Riga, Latvia (UTC+3)
+            const targetDate = new Date(Date.UTC(2024, 7, 1, 14, 10, 0));  // UTC time equivalent to 17:10 in Riga
 
-            const targetDate = new Date(targetDateTime).getTime();
             const now = new Date().getTime();
             const distance = targetDate - now;
 
@@ -45,14 +35,14 @@
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            const milliseconds = Math.floor(distance % 1000).toString().padStart(3, '0'); // Ensure 3 digits
+            const milliseconds = Math.floor(distance % 1000).toString().padStart(3, '0');  // Ensure 3 digits
 
             document.getElementById("countdown").innerHTML = 
                 days + "d " + hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms";
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "I'm with you gorgeous";
+                document.getElementById("countdown").innerHTML = "EXPIRED";
             }
         }
 
@@ -61,3 +51,4 @@
     </script>
 </body>
 </html>
+
