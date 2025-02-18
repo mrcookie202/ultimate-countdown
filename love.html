@@ -105,24 +105,28 @@
     const chatInput = document.getElementById("chatInput");
     const chatLog = document.getElementById("chatLog");
     
-	
-	// Define secret words with their associated clues (all keys in lower-case)
-const clues = {
-  "sardines a la tapenade": {
-    resolved: false,
-    message: "Clue 2: using a keyword cypher solve: oqcjepua cu odmomics ; the key is part of what i take in the morning"
-  },
-  "cramique au chocolat": {
-    resolved: false,
-    message: "Clue 3: 6F 68 20 6C 61 20 76 61 63 68 65"
-  },
-  "65 6c 6c 65 20 65 73 74 20 6f 75 20 6c 61 20 6d 65 75 68 20 6d 65 75 68": {
-    resolved: false,
-    message: "Clue 4: [Insert your clue message here]"
-  }
-};
+    // Define secret words with their associated clues (all keys in lower-case)
+    // We've added a new extra puzzle with the key "clock" (for Clue 4)
+    // and updated the final clue to Clue 5.
+    const clues = {
+      "sardines a la tapenade": {
+        resolved: false,
+        message: "Clue 2: using a keyword cypher solve: oqcjepua cu odmomics ; the key is part of what i take in the morning"
+      },
+      "cramique au chocolat": {
+        resolved: false,
+        message: "Clue 3: 6F 68 20 6C 61 20 76 61 63 68 65"
+      },
+      "65 6c 6c 65 20 65 73 74 20 6f 75 20 6c 61 20 6d 65 75 68 20 6d 65 75 68": {
+        resolved: false,
+        message: "Clue 4: The best desert ever location : shift - hex - to 0/1 "
+      },
+      "00110110 00111000 00100000 00110110 00110001 00100000 00110111 00110100 00100000 00110111 00110110 00100000 00110111 01000001 00100000 00110111 00110111 00100000 00110110 01000110 00100000 00110110 01000011 00100000 00110111 00111001 00100000 00110110 01000011 00100000 00110111 01000001": {
+        resolved: false,
+        message: "Clue 5: [Insert your final clue message here]"
+      }
+    };
 
-    
     const totalClues = Object.keys(clues).length;
     let resolvedCount = 0;
     
@@ -161,4 +165,3 @@ const clues = {
   </script>
 </body>
 </html>
-
