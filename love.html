@@ -16,7 +16,7 @@
       margin: 0;
     }
     #countdown {
-      font-size: 3em;
+      font-size: 6em;
       margin-bottom: 20px;
     }
   </style>
@@ -26,12 +26,13 @@
   <div id="countdown"></div>
   
   <script>
-    // Big Countdown Timer Code
-    // Set the original timer end date (using UTC: month is 0-indexed; 2 = March)
-    let timerEndDate = new Date(Date.UTC(2025, 2, 9, 12, 30, 0));
+    // Countdown Timer Code
+    // Paris is UTC+1 in early March, so 15:00 Paris time equals 14:00 UTC.
+    // Set the timer end date: March 8, 2025, 15:00 Paris time (14:00 UTC)
+    let timerEndDate = new Date(Date.UTC(2025, 2, 8, 14, 0, 0));
     const countdownElement = document.getElementById("countdown");
     
-    function updateBigCountdown() {
+    function updateCountdown() {
       const now = new Date().getTime();
       const distance = timerEndDate - now;
       
@@ -48,8 +49,8 @@
       countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
     }
     
-    setInterval(updateBigCountdown, 1000);
-    updateBigCountdown();
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
