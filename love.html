@@ -27,9 +27,8 @@
   
   <script>
     // Countdown Timer Code
-    // Paris is UTC+1 in early March, so 15:00 Paris time equals 14:00 UTC.
-    // Set the timer end date: March 8, 2025, 15:00 Paris time (14:00 UTC)
-    let timerEndDate = new Date(Date.UTC(2025, 2, 8, 14, 0, 0));
+    // Paris is UTC+2 on October 16, 2025 (CEST), so 19:15 Paris time = 17:15 UTC
+    let timerEndDate = new Date(Date.UTC(2025, 9, 16, 17, 15, 0)); 
     const countdownElement = document.getElementById("countdown");
     
     function updateCountdown() {
@@ -37,7 +36,7 @@
       const distance = timerEndDate - now;
       
       if (distance < 0) {
-        countdownElement.innerHTML = "I'm with you gorgeous, I LOOOOOOOOOLOVE YOUUUUUUUU";
+        countdownElement.innerHTML = "We are togethere, I LOOOOOOOOOLOVE YOUUUUUUUU";
         return;
       }
       
